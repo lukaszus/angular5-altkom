@@ -1,0 +1,15 @@
+<div class="card card-book" (click)="select()" [style.borderBottomColor]="book.category">
+  <img src="http://placehold.it/320x240" alt="Book cover">
+  
+  <ng-content select="[book-header]"></ng-content>
+
+  <div class="card-body">
+    <h4 [class.selectedBook]="isSelected">{{ book.title }}</h4>
+    <p>{{ book.authors }}</p>
+    <p>Bestseller: {{ book.bestSeller }}</p>
+  </div>
+  <!-- <ng-content></ng-content> -->
+  <!-- <app-rating [rating]="book.rating"></app-rating> -->
+
+  <ng-content select="[book-footer]"></ng-content>
+</div>

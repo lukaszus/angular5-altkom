@@ -1,0 +1,12 @@
+<app-book-form *ngIf="selectedBook !== null" [book]="editedBook" (cancel)="cancel()" (save)="save($event)"></app-book-form>
+    
+  <div class="row justify-content-around">
+    <app-book-card *ngFor="let book of books" 
+      [book]="book" 
+      [isSelected]="book === selectedBook" 
+      (bookSelected)="select(book)">
+      
+      <app-rating [rating]="book.rating" book-footer></app-rating> <!--kontent dla ng-content-->
+
+    </app-book-card>
+  </div>
